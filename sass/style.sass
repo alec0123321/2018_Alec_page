@@ -1,0 +1,361 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css)
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Libre+Baskerville')
+$colorWhite: rgba(211,211,211,0.1)
+$colorred: #f15c5c
+$colorRed: #E53A40
+$colorBlack: #3C3530
+$colorBlue: #005CFF
+$colorSky: #dddfe6
+$colorGray: #a3a1a1
+$colorGreen: #56A902
+$colorOrange: #F68657
+$colorPurple: #6C49B8
+$colorYellow: #f9c00c
+$icon_size: 70%
+$dark_blue: #000046
+$light_blue: #1CB5E0
+$mid_blue: #1694B8
+$dark_2_blue: #1897BA
+
+@mixin size($w,$h:$w)
+  width: $w
+  height: $h
+
+@mixin flexCenter
+  display: flex
+  justify-content: center
+  align-items: center
+
+
+html,body
+  height: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  margin: 0
+  background-color: #eee
+  flex-direction: column
+  font-family: 'EB Garamond',  "微軟正黑體"
+  color: $dark_2_blue
+.footer
+  padding-top: 20px
+  +flexCenter
+  text-align: center
+  font-family: "微軟正黑體"
+// .canvas
+//   max-width: 100%
+//   position: absolute
+//   z-index: 1
+//   height: 600px
+//   width: 600px
+//   background-color: black
+//   display: flex
+
+.first
+  padding-top: 10vh
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  position: absolute
+  z-index: 10
+
+
+.background
+
+
+
+
+#circle_1
+  position: absolute
+  z-index: 5
+  +size(50%)
+  left: 15vw
+  top: 10vh
+  animation: left1 3s alternate infinite
+  @keyframes left1
+    0%
+      +size(50%)
+    50%
+      left: 14vw
+      top: 9vh
+      +size(55%)
+    100%
+      +size(50%)
+
+#circle_2
+  position: absolute
+  z-index: 2
+  +size(45%)
+  right: 18vw
+  top: 5vh
+  animation: right1 3s alternate infinite
+  animation-delay: -3s
+  @keyframes right1
+    0%
+      +size(45%)
+    50%
+      right: 16vw
+      top: 7vh
+      +size(43%)
+    100%
+      +size(45%)
+#circle_3
+  position: absolute
+  z-index: 1
+  +size(45%)
+  left: 18vw
+  bottom: 22vh
+  animation: left2_down 3s alternate infinite
+  animation-delay: -2s
+  @keyframes left2_down
+    0%
+      +size(45%)
+    50%
+      left: 20vw
+      bottom: 23vh
+      +size(45%)
+    100%
+      +size(45%)
+#circle_4
+  position: absolute
+  z-index: 3
+  +size(37%)
+  right: 21vw
+  bottom: 25vh
+  animation: right2_down 3s alternate infinite
+  @keyframes right2_down
+    0%
+      +size(37%)
+    50%
+      right: 18vw
+      bottom: 23vh
+      +size(40%)
+    100%
+      +size(37%)
+#circle_5
+  position: absolute
+  z-index: 6
+  +size(35%)
+  right: 30vw
+  bottom: 20vh
+  animation: mid_down 3s alternate infinite
+  animation-delay: -2s
+  @keyframes mid_down
+    0%
+      +size(35%)
+    50%
+      bottom: 22vh
+      +size(36%)
+    100%
+      +size(35%)
+#circle_6
+  position: absolute
+  z-index: 4
+  +size(36%)
+  left: 29vw
+  top: 3vh
+  animation: mid_top 3s alternate infinite
+  @keyframes mid_top
+    0%
+      +size(36%)
+    50%
+      top: 2vh
+      +size(38%)
+    100%
+      +size(36%)
+
+
+.container
+  +size(500px,500px)
+  background: linear-gradient(150deg,$dark_blue,$light_blue)
+  box-shadow: 0px 0px 20px rgba(black,0.7)
+  +flexCenter
+  display: flex
+  justify-content: center
+
+
+
+
+
+  .box
+    +size(470px,470px)
+    +flexCenter
+    background-color: white
+    // display: flex
+    // justify-content: center
+    // align-items: center
+    // .left,.center,.right
+    //   +size(50%)
+    .svg
+      +size(90%)
+      //animate
+      animation: color 8s alternate infinite
+    @keyframes color
+      0%
+        fill: $dark_blue
+      60%
+        fill: $mid_blue
+      100%
+        fill: $dark_blue
+    @keyframes line
+      0%
+        stroke-dashoffset: 2000
+        fill: black
+      50%
+        fill: $colorWhite
+        stroke-dashoffset: 1000
+      100%
+        stroke-dashoffset: 100
+        fill: black
+    .cls-1
+      fill: #1f1b3b
+      animation: color 5s alternate infinite
+    .cls-2
+      fill: #1f1b3b
+      stroke: #1f1b3b
+      stroke-miterlimit: 10
+      stroke-width: 2px
+      animation: color 5s alternate infinite
+
+
+
+
+.items
+  padding-top: 10vh
+  display: flex
+  justify-content: space-around
+  font-size: 0.8em
+  a
+    text-decoration: none
+    color: $dark_2_blue
+    &:hover
+      color: $light_blue
+.small
+  display: none
+.items-small
+  display: none
+
+
+
+
+///////////////////////////////////////////////////////////
+
+//PageLoading
+.pageLoading
+  position: fixed
+  +size(100%)
+  left: 0
+  top: 0
+  +flexCenter
+  background-color: #fff
+  flex-direction: column
+  transition: opacity 0.5s 0.5s
+  position: absolute
+  z-index: 100
+
+  &.complete
+    opacity: 0
+    display: none
+    .monster
+      transform: scale(0.01) rotate(360deg)
+
+//monster animate
+.monster
+  +size(110px)
+  background-color: $mid_blue
+  border-radius: 55px
+  position: relative
+  flex-direction: column
+  transition: 0.5s
+  +flexCenter
+  .eye
+    +size(40%)
+    border-radius: 50%
+    background-color: #fff
+    +flexCenter
+    .eyeball
+      +size(50%)
+      border-radius: 50%
+      background-color: $colorBlack
+
+  @keyframes jumping
+    50%
+      top: 0
+      box-shadow: 0px 10px 20px rgba(black,0.2)
+    100%
+      top: -50px
+      box-shadow: 0px 120px 50px rgba(black,0.2)
+  animation: jumping 0.8s infinite alternate
+
+  @keyframes eyemove
+    0%,10%,20%
+      transform: translate(50%)
+      height: 50%
+      width: 50%
+
+    80%,90%,100%
+      transform: translate(-50%)
+      height: 50%
+      width: 50%
+    50%
+      height: 100%
+
+  .eyeball
+    animation: eyemove 1s infinite alternate
+  @keyframes eyeblank
+    0%,100%,10%,90%
+      height: 40%
+    50%
+      height: 20%
+  .eye
+    animation: eyeblank 1s infinite alternate
+//loading bar
+.loading
+  +size(200px,8px)
+  margin-top: 80px
+  border-radius: 5px
+  background-color: #fff
+  overflow: hidden
+  transition: 0.5s
+  .bar
+    background-color: $mid_blue
+    +size(0%,100%)
+//
+
+///////////////////////////////////////////////////////////
+@media screen and (max-width: 60vh)
+  .first
+    display: none
+  .small
+    +flexCenter
+    flex-direction: row
+
+  .container-small
+    +size(300px)
+    background: linear-gradient(150deg,$dark_blue,$light_blue)
+    +flexCenter
+  .box-small
+    +size(280px,280px)
+    +flexCenter
+    background-color: white
+  .svg-small
+    +size(90%)
+    animation: color 8s alternate infinite
+  // .items-small
+  //   display: flex
+  //   padding-top: 80vh
+  //   font-size: 0.8em
+  .items-small
+    padding-top: 20px
+    display: flex
+    color: $dark_blue
+    flex-direction: column
+    font-size: 0.7em
+    a
+      text-decoration: none
+      color: $dark_2_blue
+      &:hover
+        color: $light_blue
+
+  .background
+    display: none

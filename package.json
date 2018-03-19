@@ -1,0 +1,21 @@
+{
+  "name": "2018_03",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "animate.css": "^3.6.1",
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-connect-php": "^1.0.3",
+    "gulp-plumber": "^1.2.0",
+    "gulp-ruby-sass": "^3.0.0",
+    "gulp-sass": "^3.1.0"
+  }
+}
