@@ -68,51 +68,51 @@ html,body
 #circle_1
   position: absolute
   z-index: 5
-  +size(45%)
-  left: 15vw
-  top: 10vh
+  +size(35%)
+  left: 25vw
+  top: 12vh
   animation: left1 3s alternate infinite
   @keyframes left1
     0%
-      +size(45%)
+      +size(35%)
     50%
-      left: 14vw
-      top: 9vh
-      +size(40%)
+      left: 22vw
+      top: 10vh
+      +size(36%)
     100%
-      +size(45%)
+      +size(35%)
 
 #circle_2
   position: absolute
   z-index: 2
-  +size(40%)
-  right: 18vw
-  top: 5vh
+  +size(32%)
+  right: 20vw
+  top: 7vh
   animation: right1 3s alternate infinite
   animation-delay: -3s
   @keyframes right1
     0%
-      +size(40%)
+      +size(32%)
     50%
-      right: 16vw
-      top: 7vh
-      +size(38%)
+      right: 22vw
+      top: 8vh
+      +size(30%)
     100%
-      +size(40%)
+      +size(32%)
 #circle_3
   position: absolute
   z-index: 1
   +size(35%)
-  left: 18vw
-  bottom: 25vh
+  left: 25vw
+  bottom: 33vh
   animation: left2_down 3s alternate infinite
   animation-delay: -2s
   @keyframes left2_down
     0%
       +size(35%)
     50%
-      left: 20vw
-      bottom: 27vh
+      left: 23vw
+      bottom: 30vh
       +size(30%)
     100%
       +size(35%)
@@ -120,15 +120,15 @@ html,body
   position: absolute
   z-index: 3
   +size(35%)
-  right: 23vw
-  bottom: 28vh
+  right: 20vw
+  bottom: 35vh
   animation: right2_down 3s alternate infinite
   @keyframes right2_down
     0%
       +size(35%)
     50%
-      right: 18vw
-      bottom: 25vh
+      right: 23vw
+      bottom: 30vh
       +size(38%)
     100%
       +size(35%)
@@ -137,14 +137,14 @@ html,body
   z-index: 6
   +size(35%)
   right: 35vw
-  bottom: 25vh
+  bottom: 30vh
   animation: mid_down 3s alternate infinite
   animation-delay: -2s
   @keyframes mid_down
     0%
       +size(35%)
     50%
-      bottom: 28vh
+      bottom: 33vh
       +size(30%)
     100%
       +size(35%)
@@ -166,7 +166,7 @@ html,body
 
 
 .container
-  +size(500px,500px)
+  +size(400px,400px)
   background: linear-gradient(150deg,$dark_blue,$light_blue)
   box-shadow: 0px 0px 20px rgba(black,0.7)
   +flexCenter
@@ -178,7 +178,7 @@ html,body
 
 
   .box
-    +size(470px,470px)
+    +size(380px,380px)
     +flexCenter
     background-color: white
     // display: flex
@@ -359,3 +359,12 @@ html,body
 
   .background
     display: none
+@media screen and (min-width: 1300px)
+  .container-small
+    +size(600px)
+    background: linear-gradient(150deg,$dark_blue,$light_blue)
+    +flexCenter
+  .box-small
+    +size(580px,580px)
+    +flexCenter
+    background-color: white
