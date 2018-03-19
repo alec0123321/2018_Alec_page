@@ -359,7 +359,8 @@ html,body
 
   .background
     display: none
-@media screen and (min-width: 1300px)
+/////////////////////////////////////////////////
+@media screen and (min-width: 1000px)
   .container-small
     +size(600px)
     background: linear-gradient(150deg,$dark_blue,$light_blue)
@@ -368,3 +369,104 @@ html,body
     +size(580px,580px)
     +flexCenter
     background-color: white
+  #circle_1
+    position: absolute
+    z-index: 5
+    +size(30%)
+    left: 25vw
+    top: 15vh
+    animation: left1 3s alternate infinite
+    @keyframes left1
+      0%
+        +size(30%)
+      50%
+        left: 22vw
+        top: 12vh
+        +size(36%)
+      100%
+        +size(30%)
+
+  #circle_2
+    position: absolute
+    z-index: 2
+    +size(32%)
+    right: 20vw
+    top: 17vh
+    animation: right1 3s alternate infinite
+    animation-delay: -3s
+    @keyframes right1
+      0%
+        +size(32%)
+      50%
+        right: 22vw
+        top: 20vh
+        +size(30%)
+      100%
+        +size(32%)
+  #circle_3
+    position: absolute
+    z-index: 1
+    +size(35%)
+    left: 25vw
+    bottom: 33vh
+    animation: left2_down 3s alternate infinite
+    animation-delay: -2s
+    @keyframes left2_down
+      0%
+        +size(35%)
+      50%
+        left: 23vw
+        bottom: 35vh
+        +size(30%)
+      100%
+        +size(35%)
+  #circle_4
+    position: absolute
+    z-index: 3
+    +size(35%)
+    right: 20vw
+    bottom: 35vh
+    animation: right2_down 3s alternate infinite
+    @keyframes right2_down
+      0%
+        +size(35%)
+      50%
+        right: 23vw
+        bottom: 30vh
+        +size(38%)
+      100%
+        +size(35%)
+  #circle_5
+    position: absolute
+    z-index: 6
+    +size(35%)
+    right: 35vw
+    bottom: 35vh
+    animation: mid_down 3s alternate infinite
+    animation-delay: -2s
+    @keyframes mid_down
+      0%
+        +size(35%)
+      50%
+        bottom: 33vh
+        +size(30%)
+      100%
+        +size(35%)
+  #circle_6
+    position: absolute
+    z-index: 4
+    +size(36%)
+    left: 29vw
+    top: 7vh
+    animation: mid_top 3s alternate infinite
+    @keyframes mid_top
+      0%
+        +size(36%)
+      50%
+        top: 9vh
+        +size(38%)
+      100%
+        +size(36%)
+@media screen and (min-width: 2000px)
+  .background
+    display: none
